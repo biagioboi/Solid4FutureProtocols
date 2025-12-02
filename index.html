@@ -1,0 +1,141 @@
+<!-- Solid Symposium 2026 — Session Page (italiano)
+     Salva questo file come `index.html` nella cartella del repository GitHub e attiva GitHub Pages
+     Sostituisci i placeholder (logo, nomi, orari, link) con i dati della tua sessione.
+-->
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solid Symposium 2026 — Sessione: Solid4FutureProtocols</title>
+  <meta name="description" content="Pagina della sessione Solid4FutureProtocols al Solid Symposium 2026" />
+
+  <style>
+    :root{--bg:#ffffff;--text:#0b1b2b;--muted:#556677;--accent:#0077cc;--card:#f7fbff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--text);background:linear-gradient(180deg,#ffffff,#fbfdff);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent)}
+    .wrap{max-width:980px;margin:32px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:8px;background:var(--card);display:grid;place-items:center;font-weight:700;color:var(--accent);border:1px solid #e6f0fb}
+    h1{font-size:1.45rem;margin:0}
+    .sub{color:var(--muted);font-size:0.95rem}
+
+    main{margin-top:20px;display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,37,61,0.06);border:1px solid rgba(11,27,43,0.04)}
+
+    .row{display:flex;gap:18px;flex-wrap:wrap}
+    .col{flex:1 1 320px}
+
+    .speakers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .person{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:8px;background:#e9f3ff;display:grid;place-items:center;font-weight:700;color:var(--accent)}
+    .meta{font-size:0.95rem}
+    .meta b{display:block}
+
+    .prog{font-family:Menlo,monospace;background:#f1f7ff;padding:12px;border-radius:8px}
+
+    footer{margin-top:20px;color:var(--muted);font-size:0.9rem}
+
+    /* small screens */
+    @media (max-width:520px){.wrap{padding:12px}.logo{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h1>Solid4FutureProtocols: Using Solid to Enable Future Application Protocols</h1>
+          <div class="sub">Sessione: Solid Symposium 2026 · Giorno: 15 Marzo 2026 · Sala: Aula Magna</div>
+        </div>
+      </div>
+      <nav>
+        <a class="sub" href="#programma">Programma</a>
+        <a class="sub" href="#relatori" style="margin-left:12px">Relatori</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2 style="margin-top:0">Abstract</h2>
+        <p class="sub"><b>Solid4FutureProtocols: Using Solid to Enable Future Application Protocols</b><br>
+Biagio Boi and Franco Cirillo, University of Salerno, Italy | Sreenivasareddy Hulebeedureddy, AT&amp;T Services Inc., USA</p>
+
+        <p>Networked communication plays a relevant role across modern computing domains, from Artificial Intelligence (AI) to the Internet of Things (IoT). As data becomes increasingly distributed and user-centric, Solid offers a paradigm in which individuals and IoT devices can store data and algorithms within secure, access-controlled PODs. This approach reduces attack surfaces, mitigates vendor lock-in, and enhances data sovereignty. However, integrating future applications with Solid requires standardized, interoperable protocols capable of supporting decentralized data access patterns. Key challenges arise in aligning semantic models, security frameworks, and architectural assumptions between future architectures and Solid’s decentralized ecosystem. This session explores the intersection between communication protocols and the Solid framework, focusing on practical integration pathways, emerging protocol designs, and open research challenges. The goal is to outline future directions for secure, interoperable, and decentralized application protocols capable of leveraging Solid PODs as core data and computation endpoints.</p>
+
+        <div class="row" style="margin-top:12px">
+          <div class="col">
+            <div class="meta"><b>Orario</b> 09:00 — 11:00</div>
+            <div class="meta"><b>Organizzatori</b> Biagio Boi (University of Salerno), Franco Cirillo (University of Salerno)</div>
+            <div class="meta"><b>Contatti</b> <a href="mailto:organizer@example.com">organizer@example.com</a></div>
+          </div>
+          <div class="col">
+            <div class="meta"><b>Link importante</b> <a href="https://solid.iis.fraunhofer.de/SCS-DS-IoT/public/2024/solid%20symposium/index.html" target="_blank" rel="noopener">Pagina principale Solid Symposium</a></div>
+            <div class="meta"><b>Registrazione</b> È richiesta registrazione al congresso (link al form/programma generale).</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="relatori" class="card">
+        <h2 style="margin-top:0">Relatori</h2>
+        <div class="speakers">
+          <div class="person">
+            <div class="avatar">BB</div>
+            <div class="meta"><b>Biagio Boi</b><span class="sub">University of Salerno — Autore</span></div>
+          </div>
+
+          <div class="person">
+            <div class="avatar">FC</div>
+            <div class="meta"><b>Franco Cirillo</b><span class="sub">University of Salerno — Autore</span></div>
+          </div>
+
+          <div class="person">
+            <div class="avatar">SH</div>
+            <div class="meta"><b>Sreenivasareddy Hulebeedureddy</b><span class="sub">AT&amp;T Services Inc. — Autore</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="programma" class="card">
+        <h2 style="margin-top:0">Programma (orario dettagliato)</h2>
+        <div class="prog">
+09:00 — 09:05  Benvenuto e introduzione (Chair)<br>
+09:05 — 09:25  Biagio Boi — Introduzione ai protocolli futuri e Solid (20')<br>
+09:25 — 09:45  Franco Cirillo — Integrazione semantica e modelli di sicurezza (20')<br>
+09:45 — 10:05  Sreenivasareddy Hulebeedureddy — Use cases e architetture per IoT (20')<br>
+10:05 — 10:25  Tavola rotonda + Q&amp;A (20')<br>
+10:25 — 10:35  Break (10')<br>
+10:35 — 11:00  Demo & discussione aperta (25')
+        </div>
+
+        <p style="margin-top:12px" class="sub">Se volete che aggiunga i nomi completi, le affiliazioni precise o i link alle presentazioni, incollatemi i dettagli e aggiorno la pagina.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top:0">Materiali e risorse</h2>
+        <ul>
+          <li>Slide e paper saranno linkati qui dopo la conferenza.</li>
+          <li>Repository demo: <a href="#">github.com/tuo-repo</a> (se disponibile)</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <div><b>Solid Symposium 2026</b> — Organizzato da Fraunhofer & partner</div>
+          <div class="sub">Per modifiche: invia i contenuti a <a href="mailto:organizer@example.com">organizer@example.com</a></div>
+        </div>
+        <div class="sub">Pagina generata: <time datetime="2025-12-02">02/12/2025</time></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
