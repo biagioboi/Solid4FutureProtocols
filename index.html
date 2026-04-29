@@ -108,6 +108,172 @@
     /* small visual tweaks for headings inside cards */
     section.card h2{margin:0 0 8px 0;font-size:1.05rem}
     .muted-note{color:var(--muted);font-size:0.95rem}
+    .committee-list{margin:10px 0 0;padding-left:20px}
+    .committee-list li + li{margin-top:6px}
+    .topic-list{margin:12px 0 0;padding-left:20px}
+    .topic-list li + li{margin-top:6px}
+
+    .program-summary{
+      display:grid;
+      gap:10px;
+      margin-bottom:18px;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(233,243,255,0.9));
+      border:1px solid rgba(0,119,204,0.12);
+    }
+    .program-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .program-chip{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#ffffff;
+      border:1px solid rgba(0,119,204,0.14);
+      color:var(--accent);
+      font-size:0.9rem;
+      font-weight:600;
+    }
+    .program-list{
+      display:grid;
+      gap:14px;
+    }
+    .program-item{
+      padding:16px;
+      border-radius:12px;
+      background:#ffffff;
+      border:1px solid rgba(11,27,43,0.08);
+      box-shadow:0 10px 24px rgba(15,37,61,0.05);
+    }
+    .program-item__head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .program-item__badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .program-item h3{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.35;
+    }
+    .program-authors{
+      margin:0;
+      color:var(--muted);
+      font-size:0.96rem;
+    }
+    .program-actions{
+      margin-top:14px;
+      display:flex;
+      justify-content:flex-end;
+    }
+    .button-secondary{
+      border:0;
+      border-radius:10px;
+      background:var(--accent);
+      color:#ffffff;
+      padding:10px 14px;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,119,204,0.22);
+    }
+    .button-secondary:hover{filter:brightness(.97)}
+    .button-secondary:focus{
+      outline:3px solid rgba(0,119,204,0.18);
+      outline-offset:3px;
+    }
+    .status-chip{
+      display:inline-flex;
+      align-items:center;
+      padding:5px 9px;
+      border-radius:999px;
+      background:#e9f3ff;
+      color:var(--accent);
+      font-size:0.82rem;
+      font-weight:700;
+      letter-spacing:0.01em;
+    }
+    .abstract-modal{
+      width:min(720px,calc(100% - 24px));
+      padding:0;
+      border:0;
+      border-radius:18px;
+      background:transparent;
+      color:var(--text);
+    }
+    .abstract-modal::backdrop{
+      background:rgba(11,27,43,0.55);
+      backdrop-filter:blur(4px);
+    }
+    .abstract-modal__surface{
+      background:#ffffff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 24px 60px rgba(11,27,43,0.26);
+    }
+    .abstract-modal__header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:20px 22px 14px;
+      border-bottom:1px solid rgba(11,27,43,0.08);
+      background:linear-gradient(180deg,#ffffff,#f4f9ff);
+    }
+    .abstract-modal__eyebrow{
+      margin:0 0 6px;
+      color:var(--accent);
+      font-size:0.85rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+    .abstract-modal__title{
+      margin:0 0 8px;
+      font-size:1.2rem;
+      line-height:1.35;
+    }
+    .abstract-modal__authors{
+      margin:0;
+      color:var(--muted);
+    }
+    .abstract-modal__close{
+      border:0;
+      background:rgba(0,119,204,0.08);
+      color:var(--accent);
+      font:inherit;
+      font-weight:700;
+      border-radius:10px;
+      padding:9px 12px;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+    .abstract-modal__body{
+      padding:20px 22px 24px;
+    }
+    .abstract-modal__body p{
+      margin:0;
+    }
+    .abstract-modal__body p + p{
+      margin-top:14px;
+    }
+    .abstract-placeholder{
+      padding:14px;
+      border-radius:12px;
+      background:#f7fbff;
+      color:var(--muted);
+      border:1px dashed rgba(0,119,204,0.2);
+    }
   </style>
 </head>
 <body>
@@ -170,31 +336,25 @@ Biagio Boi and Franco Cirillo, University of Salerno, Italy | Sreenivasareddy Hu
 
       <section id="committee" class="card">
         <h2 style="margin-top:0">Technical Programme Committee (TPC)</h2>
-        <p class="muted-note"><ul>
+        <ul class="committee-list muted-note">
           <li>Marco De Santis, University of Salerno, Italy</li>
           <li>Sadok Ben Yahia, University of Southern Denmark, Denmark</li>
           <li>Gaurav Nanda, Databricks Inc, USA</li>
           <li>Ashok Singamaneni, Nike Inc, USA</li>
-          </p>
+        </ul>
       </section>
 
       <section id="contributions" class="card">
         <h2 style="margin-top:0">Call for Contributions</h2>
-        <p> Solid4FutureProtocols session aims to connect academic and industry expert to discuss about the usage and adaption of communcation protocols for Solid technologies.
-          In fact, Solid can be used in multiple way, including LLMs and IoT devices, which translate in very different scenarios.
-          The idea behind this session is to collect contributions related to the communication protocols for existing and future technologies leveraging Solid. This session is co-located with the Solid Symposium 2026, hosted in London, UK.
-
-
-Thus, this session comprises presentations from short papers and flash talks from extended abstracts in related areas not limited to the following:
-
-<ul>
-  <li>Interoperable Solid POD-to-X communications</li>
-  <li>Security of communication Solid POD-to-X</li>
-  <li>Protocol adaptation and optimization for AI/ML workloads, including, but not limited to LLMs</li>
-  <li>Efficient communication patterns for IoT devices within Solid ecosystems</li>
-  <li>Alignment of semantic models and decentralized architecture frameworks</li>
-</ul>
-</p>
+        <p>Solid4FutureProtocols session aims to connect academic and industry expert to discuss about the usage and adaption of communcation protocols for Solid technologies. In fact, Solid can be used in multiple way, including LLMs and IoT devices, which translate in very different scenarios. The idea behind this session is to collect contributions related to the communication protocols for existing and future technologies leveraging Solid. This session is co-located with the Solid Symposium 2026, hosted in London, UK.</p>
+        <p>Thus, this session comprises presentations from short papers and flash talks from extended abstracts in related areas not limited to the following:</p>
+        <ul class="topic-list">
+          <li>Interoperable Solid POD-to-X communications</li>
+          <li>Security of communication Solid POD-to-X</li>
+          <li>Protocol adaptation and optimization for AI/ML workloads, including, but not limited to LLMs</li>
+          <li>Efficient communication patterns for IoT devices within Solid ecosystems</li>
+          <li>Alignment of semantic models and decentralized architecture frameworks</li>
+        </ul>
       </section>
 
 
@@ -217,25 +377,166 @@ Thus, this session comprises presentations from short papers and flash talks fro
 
       <section id="programma" class="card">
         <h2 style="margin-top:0">Detailed Program</h2>
-        <a href="https://maps.app.goo.gl/9KQTGaTGiVA5EHCe9">Track 3, Room B, April 30, 2026, 14:00 - 14:45</a><br><br>
-          <p class="muted-note"><ul>
-          <li>O. Seneviratne, L. Carta, F. Spadea; Protocol Adaptations for a Sovereign Agentic Web in Solid Ecosystems</li>
-          <li>G. Sepe, B. Boi, C. Esposito; Decentralised Healthcare Consensus Management: An Architecture Based on Solid, Blockchain and Ricardian Contracts</li>
-          <li>A. Abidin; Privacy-enhancing protocols for Solid: Anonymous Credentials and Secure Multiparty Computation</li>
-          <li>G. Popescu-Craiova; A Solid-Based Fleet Management Architecture for Secure IoT Device Authorization</li>
-          </p>
+        <div class="program-summary">
+          <div class="program-meta">
+            <span class="program-chip">Track 3</span>
+            <span class="program-chip">Room B</span>
+            <span class="program-chip">April 30, 2026</span>
+            <span class="program-chip">14:00 - 14:45</span>
+          </div>
+          <div>
+            <a href="https://maps.app.goo.gl/9KQTGaTGiVA5EHCe9">City St George's, University of London</a>
+          </div>
+          </div>
+        <div id="program-list" class="program-list" aria-live="polite"></div>
       </section>
     </main>
+
+    <dialog id="abstract-modal" class="abstract-modal" aria-labelledby="abstract-modal-title">
+      <div class="abstract-modal__surface">
+        <div class="abstract-modal__header">
+          <div>
+            <p id="abstract-modal-type" class="abstract-modal__eyebrow"></p>
+            <h3 id="abstract-modal-title" class="abstract-modal__title"></h3>
+            <p id="abstract-modal-authors" class="abstract-modal__authors"></p>
+          </div>
+          <button id="abstract-modal-close" class="abstract-modal__close" type="button" aria-label="Close abstract">
+            Close
+          </button>
+        </div>
+        <div id="abstract-modal-body" class="abstract-modal__body"></div>
+      </div>
+    </dialog>
 
     <footer>
       <div class="card" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
         <div class="muted-note">Solid4FutureProtocols: Using Solid to Enable Future Application Protocols @ <a href="https://sosy2026.eu">Solid Symposium 2026</a></div>
-        <div class="sub">Last Update: <time datetime="2026-04-21">21/04/2026</time></div>
+        <div class="sub">Last Update: <time datetime="2026-04-29">29/04/2026</time></div>
       </div>
     </footer>
   </div>
 
   <script>
+    // Add or update the abstract field for each manuscript to publish it in the modal.
+    const manuscripts = [
+      {
+        type: "Paper",
+        authors: "O. Seneviratne, L. Carta, F. Spadea",
+        title: "Protocol Adaptations for a Sovereign Agentic Web in Solid Ecosystems",
+        abstract: ""
+      },
+      {
+        type: "Paper",
+        authors: "G. Sepe, B. Boi, C. Esposito",
+        title: "Decentralised Healthcare Consensus Management: An Architecture Based on Solid, Blockchain and Ricardian Contracts",
+        abstract: "The management of health data requires, as a minimum, the ability to prioritise respect for user privacy and compliance with regulatory requirements. This paper proposes a decentralised architecture for digital consent management, designed to address the limitations of current centralised systems in terms of transparency and security. The entire mechanism is based on a specially modified version of Community Solid Server and blockchain technology, which, with the introduction of Ricardian contracts, offers a concrete solution for linking the technical domain with the legal domain of consent. This approach ensures the immutability of logs over time, the traceability of authorisations and data integrity. As regards feasibility, a working prototype has been developed to demonstrate how the combination of decentralised architectures and digital legal tools is indeed a viable solution for the healthcare sector."
+      },
+      {
+        type: "Paper",
+        authors: "A. Abidin",
+        title: "Privacy-enhancing protocols for Solid: Anonymous Credentials and Secure Multiparty Computation",
+        abstract: ""
+      },
+      {
+        type: "Paper",
+        authors: "G. Popescu-Craiova",
+        title: "A Solid-Based Fleet Management Architecture for Secure IoT Device Authorization",
+        abstract: "This paper presents a distributed IoT fleet management architecture built on Community Solid Server (CSS), OpenID Connect (OIDC), and a cloud-hosted control-plane backend. The system enables secure provisioning, fine-grained revocation, and dynamic re-authorization of IoT devices using Solid-issued OAuth 2.0 client credentials. A mobile iOS application serves as the human administrative interface, while IoT devices authenticate non-interactively against CSS via the OIDC token endpoint and obtain short-lived bearer access tokens. The backend acts as a credential lifecycle authority capable of issuing and revoking device credentials without mediating data traffic. We describe the control-plane and data-plane separation, the device lifecycle (registration, disable, re-enable), and the security guarantees provided by server-side credential revocation."
+      }
+    ];
+
+    function escapeHtml(value){
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function buildAbstractMarkup(abstract){
+      if(!abstract.trim()){
+        return '<p class="abstract-placeholder">The abstract for this manuscript will be published on the session page soon.</p>';
+      }
+
+      return abstract
+        .split(/\n\s*\n/)
+        .map((paragraph) => `<p>${escapeHtml(paragraph.trim())}</p>`)
+        .join("");
+    }
+
+    (function(){
+      const programList = document.getElementById("program-list");
+      const modal = document.getElementById("abstract-modal");
+      const modalType = document.getElementById("abstract-modal-type");
+      const modalTitle = document.getElementById("abstract-modal-title");
+      const modalAuthors = document.getElementById("abstract-modal-authors");
+      const modalBody = document.getElementById("abstract-modal-body");
+      const modalClose = document.getElementById("abstract-modal-close");
+      let lastTrigger = null;
+
+      if(!programList || !modal || !modalType || !modalTitle || !modalAuthors || !modalBody || !modalClose){
+        return;
+      }
+
+      programList.innerHTML = manuscripts.map((manuscript, index) => `
+        <article class="program-item">
+          <div class="program-item__head">
+            <div class="program-item__badges">
+              <span class="status-chip">${escapeHtml(manuscript.type)}</span>
+            </div>
+          </div>
+          <h3>${escapeHtml(manuscript.title)}</h3>
+          <p class="program-authors">${escapeHtml(manuscript.authors)}</p>
+          ${manuscript.abstract.trim() ? `
+            <div class="program-actions">
+              <button class="button-secondary" type="button" data-abstract-index="${index}" aria-haspopup="dialog">
+                View abstract
+              </button>
+            </div>
+          ` : ""}
+        </article>
+      `).join("");
+
+      programList.addEventListener("click", (event) => {
+        const trigger = event.target.closest("[data-abstract-index]");
+        if(!trigger){
+          return;
+        }
+
+        const manuscript = manuscripts[Number(trigger.dataset.abstractIndex)];
+        if(!manuscript){
+          return;
+        }
+
+        lastTrigger = trigger;
+        modalType.textContent = manuscript.type;
+        modalTitle.textContent = manuscript.title;
+        modalAuthors.textContent = manuscript.authors;
+        modalBody.innerHTML = buildAbstractMarkup(manuscript.abstract);
+        modal.showModal();
+      });
+
+      modalClose.addEventListener("click", () => modal.close());
+      modal.addEventListener("close", () => {
+        if(lastTrigger){
+          lastTrigger.focus();
+        }
+      });
+      modal.addEventListener("click", (event) => {
+        const bounds = modal.getBoundingClientRect();
+        const clickedInside =
+          event.clientX >= bounds.left &&
+          event.clientX <= bounds.right &&
+          event.clientY >= bounds.top &&
+          event.clientY <= bounds.bottom;
+
+        if(!clickedInside){
+          modal.close();
+        }
+      });
+    })();
+
     // Small enhancement: when menu opened on mobile, focus first link for accessibility
     (function(){
       const toggle = document.getElementById('menu-toggle');
