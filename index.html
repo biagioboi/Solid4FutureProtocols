@@ -174,9 +174,14 @@
     .program-actions{
       margin-top:14px;
       display:flex;
+      flex-wrap:wrap;
+      gap:10px;
       justify-content:flex-end;
     }
     .button-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       border:0;
       border-radius:10px;
       background:var(--accent);
@@ -185,6 +190,7 @@
       font:inherit;
       font-weight:700;
       cursor:pointer;
+      text-decoration:none;
       box-shadow:0 10px 24px rgba(0,119,204,0.22);
     }
     .button-secondary:hover{filter:brightness(.97)}
@@ -411,25 +417,27 @@ Biagio Boi and Franco Cirillo, University of Salerno, Italy | Sreenivasareddy Hu
     <footer>
       <div class="card" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
         <div class="muted-note">Solid4FutureProtocols: Using Solid to Enable Future Application Protocols @ <a href="https://sosy2026.eu">Solid Symposium 2026</a></div>
-        <div class="sub">Last Update: <time datetime="2026-04-29">29/04/2026</time></div>
+        <div class="sub">Last Update: <time datetime="2026-05-03">03/05/2026</time></div>
       </div>
     </footer>
   </div>
 
   <script>
-    // Add or update the abstract field for each manuscript to publish it in the modal.
+    // Add or update the abstract and slides fields for each manuscript to publish them on the page.
     const manuscripts = [
       {
         type: "Paper",
         authors: "O. Seneviratne, L. Carta, F. Spadea",
         title: "Protocol Adaptations for a Sovereign Agentic Web in Solid Ecosystems",
-        abstract: "The rise of Large Language Models has enabled intelligent agents capable of planning, reasoning, and autonomous decision-making. However, most existing agentic AI systems depend on centralized platforms that limit transparency, weaken personalization, and compromise data sovereignty. At the same time, decentralized infrastructures such as Solid primarily treat personal data pods as passive storage mechanisms rather than active components for intelligence and coordination. In this paper, we present a protocol-centric reference architecture for decentralized agentic AI in which Solid pods serve as authoritative, policy-governed knowledge , while federated learning enables population-level adaptation of quantized language models without requiring centralized data collection. Our architecture introduces interoperable communication patterns spanning pod-to-agent, agent-to-service, and agent-to-agent interactions, enabling privacy-preserving personalization, decentralized coordination, and policy-aware reasoning across heterogeneous environments. By combining decentralized identity, policy-checked access control, and federated model adaptation, the proposed framework advances a vision of sovereign, interoperable, and trustworthy agent ecosystems on the Web."
+        abstract: "The rise of Large Language Models has enabled intelligent agents capable of planning, reasoning, and autonomous decision-making. However, most existing agentic AI systems depend on centralized platforms that limit transparency, weaken personalization, and compromise data sovereignty. At the same time, decentralized infrastructures such as Solid primarily treat personal data pods as passive storage mechanisms rather than active components for intelligence and coordination. In this paper, we present a protocol-centric reference architecture for decentralized agentic AI in which Solid pods serve as authoritative, policy-governed knowledge , while federated learning enables population-level adaptation of quantized language models without requiring centralized data collection. Our architecture introduces interoperable communication patterns spanning pod-to-agent, agent-to-service, and agent-to-agent interactions, enabling privacy-preserving personalization, decentralized coordination, and policy-aware reasoning across heterogeneous environments. By combining decentralized identity, policy-checked access control, and federated model adaptation, the proposed framework advances a vision of sovereign, interoperable, and trustworthy agent ecosystems on the Web.",
+        slides: "slides/Future-Protocols-Solid-Oshani.pdf"
       },
       {
         type: "Paper",
         authors: "G. Sepe, B. Boi, C. Esposito",
         title: "Decentralised Healthcare Consensus Management: An Architecture Based on Solid, Blockchain and Ricardian Contracts",
-        abstract: "The management of health data requires, as a minimum, the ability to prioritise respect for user privacy and compliance with regulatory requirements. This paper proposes a decentralised architecture for digital consent management, designed to address the limitations of current centralised systems in terms of transparency and security. The entire mechanism is based on a specially modified version of Community Solid Server and blockchain technology, which, with the introduction of Ricardian contracts, offers a concrete solution for linking the technical domain with the legal domain of consent. This approach ensures the immutability of logs over time, the traceability of authorisations and data integrity. As regards feasibility, a working prototype has been developed to demonstrate how the combination of decentralised architectures and digital legal tools is indeed a viable solution for the healthcare sector."
+        abstract: "The management of health data requires, as a minimum, the ability to prioritise respect for user privacy and compliance with regulatory requirements. This paper proposes a decentralised architecture for digital consent management, designed to address the limitations of current centralised systems in terms of transparency and security. The entire mechanism is based on a specially modified version of Community Solid Server and blockchain technology, which, with the introduction of Ricardian contracts, offers a concrete solution for linking the technical domain with the legal domain of consent. This approach ensures the immutability of logs over time, the traceability of authorisations and data integrity. As regards feasibility, a working prototype has been developed to demonstrate how the combination of decentralised architectures and digital legal tools is indeed a viable solution for the healthcare sector.",
+        slides: "slides/Sepe_SmartContract.pdf"
       },
       {
         type: "Paper",
@@ -441,7 +449,8 @@ Biagio Boi and Franco Cirillo, University of Salerno, Italy | Sreenivasareddy Hu
         type: "Paper",
         authors: "G. Popescu-Craiova",
         title: "A Solid-Based Fleet Management Architecture for Secure IoT Device Authorization",
-        abstract: "This paper presents a distributed IoT fleet management architecture built on Community Solid Server (CSS), OpenID Connect (OIDC), and a cloud-hosted control-plane backend. The system enables secure provisioning, fine-grained revocation, and dynamic re-authorization of IoT devices using Solid-issued OAuth 2.0 client credentials. A mobile iOS application serves as the human administrative interface, while IoT devices authenticate non-interactively against CSS via the OIDC token endpoint and obtain short-lived bearer access tokens. The backend acts as a credential lifecycle authority capable of issuing and revoking device credentials without mediating data traffic. We describe the control-plane and data-plane separation, the device lifecycle (registration, disable, re-enable), and the security guarantees provided by server-side credential revocation."
+        abstract: "This paper presents a distributed IoT fleet management architecture built on Community Solid Server (CSS), OpenID Connect (OIDC), and a cloud-hosted control-plane backend. The system enables secure provisioning, fine-grained revocation, and dynamic re-authorization of IoT devices using Solid-issued OAuth 2.0 client credentials. A mobile iOS application serves as the human administrative interface, while IoT devices authenticate non-interactively against CSS via the OIDC token endpoint and obtain short-lived bearer access tokens. The backend acts as a credential lifecycle authority capable of issuing and revoking device credentials without mediating data traffic. We describe the control-plane and data-plane separation, the device lifecycle (registration, disable, re-enable), and the security guarantees provided by server-side credential revocation.",
+        slides: "slides/IoT_Presentation_Solid.pdf"
       }
     ];
 
@@ -488,11 +497,18 @@ Biagio Boi and Franco Cirillo, University of Salerno, Italy | Sreenivasareddy Hu
           </div>
           <h3>${escapeHtml(manuscript.title)}</h3>
           <p class="program-authors">${escapeHtml(manuscript.authors)}</p>
-          ${manuscript.abstract.trim() ? `
+          ${manuscript.abstract.trim() || manuscript.slides ? `
             <div class="program-actions">
-              <button class="button-secondary" type="button" data-abstract-index="${index}" aria-haspopup="dialog">
-                View abstract
-              </button>
+              ${manuscript.abstract.trim() ? `
+                <button class="button-secondary" type="button" data-abstract-index="${index}" aria-haspopup="dialog">
+                  View abstract
+                </button>
+              ` : ""}
+              ${manuscript.slides ? `
+                <a class="button-secondary" href="${escapeHtml(manuscript.slides)}" target="_blank" rel="noopener noreferrer">
+                  View slides
+                </a>
+              ` : ""}
             </div>
           ` : ""}
         </article>
